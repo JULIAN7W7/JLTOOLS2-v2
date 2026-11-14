@@ -62,7 +62,7 @@ function render() {
         c.innerHTML =
             (a.image_url ? `<img class="thumb" src="${a.image_url}" alt="">` : `<div class="no-thumb">📱</div>`) +
             `<h3>${esc(a.name)}</h3><p>${esc(a.description)}</p>` +
-            `<div class="foot"><span class="ic">🔗</span> Abrir descarga</div>`;
+            `<div class="foot">Descargar</div>`;
         grid.appendChild(c);
     }
 }
