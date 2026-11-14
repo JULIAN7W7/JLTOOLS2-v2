@@ -296,22 +296,22 @@ html.dark .clock {
 /* Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
 }
 
 .card {
     background: #fff;
     border: 1px solid #e2e8f0;
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 14px;
     box-shadow: var(--shadow);
     transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s, background 0.3s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     position: relative;
     overflow: hidden;
 }
@@ -339,9 +339,10 @@ html.dark .card:hover {
 
 .card .thumb {
     width: 100%;
-    height: 140px;
-    border-radius: 12px;
-    object-fit: cover;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
     background: #f1f5f9;
     display: block;
 }
@@ -352,13 +353,13 @@ html.dark .card .thumb {
 
 .card .no-thumb {
     width: 100%;
-    height: 140px;
-    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
     background: #f1f5f9;
     display: grid;
     place-items: center;
     color: var(--muted);
-    font-size: 3rem;
+    font-size: 2.2rem;
 }
 
 html.dark .card .no-thumb {
@@ -367,27 +368,27 @@ html.dark .card .no-thumb {
 }
 
 .card h3 {
-    font-size: 1.15rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--ink);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .card p {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     color: var(--ink-soft);
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .card .foot {
     margin-top: auto;
-    padding-top: 12px;
+    padding-top: 8px;
     border-top: 1px solid #f1f5f9;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 600;
     color: var(--blue);
     display: inline-flex;
