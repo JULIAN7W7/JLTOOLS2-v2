@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLTOOLS2</title>
+    <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="icon.png">
+</head>
+<body>
+    <div class="bg-icon"></div>
+
+    <div class="app-shell">
+    <header class="top-bar">
+        <div class="brand">
+            <img src="icon.png" class="brand-icon" alt="JLTOOLS2">
+            <span>JLTOOLS2</span>
+        </div>
+        <div class="controls">
+            <button class="btn ghost" id="btnEditar"><span class="ic">✏️</span></button>
+            <button class="btn ghost" id="btnSel"><span class="ic">☑️</span></button>
+            <button class="btn danger small hidden" id="btnDel"><span class="ic">🗑️</span></button>
+            <button class="btn primary" id="btnAdd"><span class="ic">➕</span> Subir App</button>
+            <button class="btn ghost" id="btnTheme" title="Cambiar tema"><span class="ic">🌙</span></button>
+        </div>
+        <div class="clock" id="clock">00:00 AM</div>
+    </header>
+
+    <div class="empty" id="emptyState">
+        <span class="ic">📦</span>
+        <h2>No hay apps aún</h2>
+        <p>Sube la primera aplicación para comenzar.</p>
+    </div>
+
+    <div class="grid" id="grid"></div>
+</div>
+
+<!-- Modal subir / editar -->
+<div class="overlay" id="overlay">
+    <div class="modal" id="modal">
+        <div class="modal-head">
+            <h2 id="modalTitle"><span class="ic">➕</span> Subir App</h2>
+            <button class="close-x" id="closeModal">✕</button>
+        </div>
+        <form id="form">
+            <input type="hidden" id="appId">
+            <div class="field">
+                <label>Nombre de la App</label>
+                <input type="text" id="name" required placeholder="Ej: Mi App">
+            </div>
+            <div class="field">
+                <label>Descripción</label>
+                <textarea id="desc" required placeholder="¿Qué hace esta app?"></textarea>
+            </div>
+            <div class="field">
+                <label>Subir Imagen</label>
+                <input type="file" id="img" accept="image/*">
+                <div class="prev" id="prev"><span class="ic">🖼️</span></div>
+            </div>
+            <div class="field">
+                <label>Link de Descarga</label>
+                <input type="url" id="link" required placeholder="https://...">
+            </div>
+            <div class="bar">
+                <button type="button" class="btn ghost" id="cancel">Cancelar</button>
+                <button type="submit" class="btn primary" id="save">Guardar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal seleccionar para editar -->
+<div class="overlay" id="overlayEdit">
+    <div class="modal" style="max-width: 620px;">
+        <div class="modal-head">
+            <h2><span class="ic">📋</span> Seleccionar App para Editar</h2>
+            <button class="close-x" id="closeEdit">✕</button>
+        </div>
+        <div class="list-view" id="editList"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
